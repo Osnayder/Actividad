@@ -29,7 +29,7 @@ public class SingletonConexionBD {
     public static Connection getInstance() {
         if (connection == null) {
             try {
-                connection = new ConectarMySQL ("localhost","empresa","root","").getConnection();
+                connection = new ConectarMySQL ("localhost","empresa","3307","root","").getConnection();
             } catch (Exception ex) {
                 Logger.getLogger(SingletonConexionBD.class.getName()).log(Level.SEVERE, null, ex);
             } 

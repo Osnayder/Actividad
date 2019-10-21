@@ -25,17 +25,17 @@ public class ConectarMySQL {
 
 	private Connection connection;
 
-	public ConectarMySQL(String servidorBD, String nombreBD, String usuario, String password) {
+	public ConectarMySQL(String servidorBD, String nombreBD, String puerto, String usuario, String contrasena) {
+            try {
+		Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+		String url= "jdbc:mysql://" + servidorBD + ":"+puerto+"/" + nombreBD + 
+                            "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; 
+		connection=DriverManager.getConnection(url,usuario,contrasena);
+                System.out.println("Conexion Exitosa");
 
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-			String url= "jdbc:mysql://" + servidorBD + "/" + nombreBD+
-                                    "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; 
-			connection=DriverManager.getConnection(url, usuario, password);
-                        System.out.println("Conexión exitosa");
-		}catch  (Exception e) {
-			System.out.println("Error al conectar: "+e);
-		}
+            }catch  (Exception e) {
+		System.out.println("Error de conexion: "+e);
+            }
 	}
 
 	public Connection getConnection() {
