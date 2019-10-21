@@ -21,23 +21,21 @@ public class Persona {
     private String nombres;
     private String apellidos;
     private String fechaNacimiento;
+    private String residencia;
+    private int departamento;
+    private int salario;
     
     public Persona() {
     }
 
-    public Persona(String identificacion, String nombres, String apellidos, String fechaNacimiento) {
+    public Persona(String identificacion, String nombres, String apellidos, String fechaNacimiento, String residencia, int departamento, int salario) {
         this.identificacion = identificacion;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+        this.residencia = residencia;
+        this.departamento = departamento;
+        this.salario = salario;
     }
 
     public String getIdentificacion() {
@@ -63,6 +61,39 @@ public class Persona {
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getResidencia() {
+        return residencia;
+    }
+
+    public void setResidencia(String residencia) {
+        this.residencia = residencia;
+    }
+
+    public int getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(int departamento) {
+        this.departamento = departamento;
+    }
+
+    public int getSalario() {
+        return salario;
+    }
+
+    public void setSalario(int salario) {
+        this.salario = salario;
+    }
+
     
     
 }

@@ -22,6 +22,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class VPrincipal extends javax.swing.JFrame {
     Connection conexion = SingletonConexionBD.getInstance();
@@ -45,6 +46,12 @@ public class VPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField13 = new javax.swing.JTextField();
+        jTextField14 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jTextField5 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
@@ -90,7 +97,7 @@ public class VPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(240, 200, 73, 23);
+        jButton1.setBounds(240, 340, 73, 23);
 
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 10)); // NOI18N
         jLabel1.setText("Identificación");
@@ -111,6 +118,27 @@ public class VPrincipal extends javax.swing.JFrame {
         jLabel4.setText("Fecha de Nacimiento");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(39, 164, 120, 20);
+
+        jLabel8.setFont(new java.awt.Font("Verdana", 1, 10)); // NOI18N
+        jLabel8.setText("Direccion Residencia");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(30, 210, 120, 30);
+
+        jLabel11.setFont(new java.awt.Font("Verdana", 1, 10)); // NOI18N
+        jLabel11.setText("Departamento");
+        jPanel1.add(jLabel11);
+        jLabel11.setBounds(60, 250, 90, 30);
+
+        jLabel12.setFont(new java.awt.Font("Verdana", 1, 10)); // NOI18N
+        jLabel12.setText("Salario");
+        jPanel1.add(jLabel12);
+        jLabel12.setBounds(100, 290, 60, 30);
+        jPanel1.add(jTextField9);
+        jTextField9.setBounds(190, 210, 180, 30);
+        jPanel1.add(jTextField13);
+        jTextField13.setBounds(190, 250, 180, 30);
+        jPanel1.add(jTextField14);
+        jTextField14.setBounds(190, 290, 180, 30);
 
         jTabbedPane1.addTab("Guadar", jPanel1);
 
@@ -215,11 +243,11 @@ public class VPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        setSize(new java.awt.Dimension(578, 337));
+        setSize(new java.awt.Dimension(578, 462));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -233,24 +261,36 @@ public class VPrincipal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // Boton para guardar
+        
+        if(!jTextField1.getText().equals("") && !jTextField2.getText().equals("")){
+            
+        }
+        
         Persona persona = new Persona();
         persona.setIdentificacion(jTextField1.getText());
         persona.setNombres(jTextField2.getText());
         persona.setApellidos(jTextField3.getText());
         persona.setFechaNacimiento(jTextField4.getText());
+        persona.setResidencia(jTextField9.getText());
+        persona.setDepartamento(Integer.parseInt(jTextField13.getText()));
+        persona.setSalario(Integer.parseInt(jTextField14.getText()));
         
-        // se envian a la base de datos.
-         try {
-            CallableStatement cst = conexion.prepareCall("{call gestionarempleado (?,?,?,?)}");
+        JOptionPane.showMessageDialog(this, "Guardar", "Se Guardo de Manera exitosa", JOptionPane.INFORMATION_MESSAGE);
+        
+       
+         /*try {
+            CallableStatement cst = conexion.prepareCall("{call gestionarempleado (?,?,?,?,?,?,?)}");
+            
             cst.execute();
             
             String nombre = cst.getString(2);
             String sexo = cst.getString(3);
             String curso = cst.getString(4);
-            
+            JOptionPane.showMessageDialog(null, "Guardar", "Se Guardo de Manera exitosa", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException ex) {
-            Logger.getLogger(VPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            JOptionPane.showMessageDialog(null, "Guardar", "No Se Pudo Guardar, Error: "+ex.getMessage(), JOptionPane.INFORMATION_MESSAGE);
+            
+        }*/
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -306,12 +346,15 @@ public class VPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -321,6 +364,8 @@ public class VPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
@@ -328,5 +373,6 @@ public class VPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
