@@ -11,12 +11,12 @@ import edu.cecar.Modelo.Persona;
  *
  * @author 1003214327
  */
-public class VentanaP extends javax.swing.JFrame {
+public class VPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form VentanaP
      */
-    public VentanaP() {
+    public VPrincipal() {
         initComponents();
     }
 
@@ -133,6 +133,9 @@ public class VentanaP extends javax.swing.JFrame {
         jLabel9.setText("Nombres");
         jPanel2.add(jLabel9);
         jLabel9.setBounds(60, 80, 70, 30);
+
+        jTextField11.setBackground(new java.awt.Color(240, 240, 240));
+        jTextField11.setBorder(null);
         jPanel2.add(jTextField11);
         jTextField11.setBounds(140, 80, 150, 30);
 
@@ -140,16 +143,28 @@ public class VentanaP extends javax.swing.JFrame {
         jLabel10.setText("Apellidos");
         jPanel2.add(jLabel10);
         jLabel10.setBounds(60, 130, 70, 30);
+
+        jTextField12.setBackground(new java.awt.Color(240, 240, 240));
+        jTextField12.setBorder(null);
         jPanel2.add(jTextField12);
         jTextField12.setBounds(140, 130, 150, 30);
 
         jTabbedPane1.addTab("Eliminar", jPanel2);
 
         jPanel3.setLayout(null);
+
+        jTextField6.setBackground(new java.awt.Color(240, 240, 240));
+        jTextField6.setBorder(null);
         jPanel3.add(jTextField6);
         jTextField6.setBounds(130, 60, 160, 30);
+
+        jTextField7.setBackground(new java.awt.Color(240, 240, 240));
+        jTextField7.setBorder(null);
         jPanel3.add(jTextField7);
         jTextField7.setBounds(130, 110, 160, 30);
+
+        jTextField8.setBackground(new java.awt.Color(240, 240, 240));
+        jTextField8.setBorder(null);
         jPanel3.add(jTextField8);
         jTextField8.setBounds(130, 160, 160, 30);
 
@@ -189,7 +204,7 @@ public class VentanaP extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,7 +214,7 @@ public class VentanaP extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(605, 337));
+        setSize(new java.awt.Dimension(578, 337));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -249,20 +264,21 @@ public class VentanaP extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaP().setVisible(true);
+                new VPrincipal().setVisible(true);
             }
         });
     }

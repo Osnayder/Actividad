@@ -1,9 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.cecar.Controlador;
+
+/**
+ *
+ * Clase: SingletonConexionBD 
+ * 
+ * @version: 0.1
+ *  
+ * @since: 5/08/2019
+ * 
+ * Fecha de Modificaci�n:
+ * 
+ * @author: Jhon Jaime Mendez
+ * 
+ * Copyright: CECAR
+ */
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -12,41 +22,19 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-/**
- *
- * Singleton que devuelve la conexion a una Base de datos
- */
-
 public class SingletonConexionBD {
     
     private static Connection connection;
     
     public static Connection getInstance() {
-        
         if (connection == null) {
-            
             try {
-                Properties properties = new Properties();
-
-                properties.load(
-                        new FileInputStream ("recursos/Conexion.properties"));
-                        connection = new ConectarMySQL (properties.getProperty("host"), properties.getProperty("baseDatos"),
-                                                        properties.getProperty("usuario"),properties.getProperty("password")).getConnection();
-
+                connection = new ConectarMySQL ("localhost","empresa","root","").getConnection();
             } catch (Exception ex) {
                 Logger.getLogger(SingletonConexionBD.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            
-            
+            } 
         }
-        
         return connection;
     }
-    
-     public Connection getInstance1() {
-        
-        return connection;
-    }
-    
+
 }
