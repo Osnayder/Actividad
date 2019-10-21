@@ -262,21 +262,21 @@ public class VPrincipal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // Boton para guardar
         
-        if(!jTextField1.getText().equals("") && !jTextField2.getText().equals("")){
+        if(!jTextField1.getText().equals("") && !jTextField2.getText().equals("") && !jTextField3.getText().equals("") && !jTextField4.getText().equals("")
+           && !jTextField9.getText().equals("") && !jTextField13.getText().equals("") && !jTextField14.getText().equals("")){
             
+            Persona persona = new Persona();
+            persona.setIdentificacion(jTextField1.getText());
+            persona.setNombres(jTextField2.getText());
+            persona.setApellidos(jTextField3.getText());
+            persona.setFechaNacimiento(jTextField4.getText());
+            persona.setResidencia(jTextField9.getText());
+            persona.setDepartamento(Integer.parseInt(jTextField13.getText()));
+            persona.setSalario(Integer.parseInt(jTextField14.getText()));
+        }else{
+            JOptionPane.showMessageDialog(this, "Campos de Formulario", "Ningun Campo debe estar vacio", JOptionPane.ERROR);
         }
-        
-        Persona persona = new Persona();
-        persona.setIdentificacion(jTextField1.getText());
-        persona.setNombres(jTextField2.getText());
-        persona.setApellidos(jTextField3.getText());
-        persona.setFechaNacimiento(jTextField4.getText());
-        persona.setResidencia(jTextField9.getText());
-        persona.setDepartamento(Integer.parseInt(jTextField13.getText()));
-        persona.setSalario(Integer.parseInt(jTextField14.getText()));
-        
-        JOptionPane.showMessageDialog(this, "Guardar", "Se Guardo de Manera exitosa", JOptionPane.INFORMATION_MESSAGE);
-        
+     
        
          /*try {
             CallableStatement cst = conexion.prepareCall("{call gestionarempleado (?,?,?,?,?,?,?)}");
@@ -286,9 +286,9 @@ public class VPrincipal extends javax.swing.JFrame {
             String nombre = cst.getString(2);
             String sexo = cst.getString(3);
             String curso = cst.getString(4);
-            JOptionPane.showMessageDialog(null, "Guardar", "Se Guardo de Manera exitosa", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Guardar", "Se Guardo de Manera exitosa", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Guardar", "No Se Pudo Guardar, Error: "+ex.getMessage(), JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Guardar", "No Se Pudo Guardar, Error: "+ex.getMessage(), JOptionPane.INFORMATION_MESSAGE);
             
         }*/
     }//GEN-LAST:event_jButton1ActionPerformed
