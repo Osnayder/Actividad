@@ -6,11 +6,11 @@ package edu.cecar.Vista;
  * 
  * @version: 0.1
  *  
- * @since: 5/08/2019
+ * @since: 21/10/2019
  * 
- * Fecha de Modificaci�n:
+ * Fecha de Modificación:
  * 
- * @author: Jhon Jaime Mendez
+ * @author: Osnayder conde Rodriguez, Jader Arcia Baldovino, Calor Beltran Guzman
  * 
  * Copyright: CECAR
  */

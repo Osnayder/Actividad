@@ -4,11 +4,11 @@
  * 
  * @version: 0.1
  *  
- * @since: 5/08/2019
+ * @sincelejo: 21/10/2019
  * 
- * Fecha de Modificaci�n:
+ * Fecha de Modificacion:
  * 
- * @author: Jhon Jaime Mendez
+ * @author: Osnayder conde Rodriguez, Jader Arcia Baldovino, Calor Beltran Guzman
  * 
  * Copyright: CECAR
  */
