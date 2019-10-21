@@ -17,7 +17,11 @@ package edu.cecar.Vista;
 
 import edu.cecar.Controlador.SingletonConexionBD;
 import edu.cecar.Modelo.Persona;
+import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class VPrincipal extends javax.swing.JFrame {
     Connection conexion = SingletonConexionBD.getInstance();
@@ -236,6 +240,17 @@ public class VPrincipal extends javax.swing.JFrame {
         persona.setFechaNacimiento(jTextField4.getText());
         
         // se envian a la base de datos.
+         try {
+            CallableStatement cst = conexion.prepareCall("{call gestionarempleado (?,?,?,?)}");
+            cst.execute();
+            
+            String nombre = cst.getString(2);
+            String sexo = cst.getString(3);
+            String curso = cst.getString(4);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(VPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
